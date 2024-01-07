@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>yt-dlpWebUI</Name>
+  <Repository>ghcr.io/marcopeocchi/yt-dlp-web-ui:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/marcopeocchi/yt-dlp-web-ui</Project>
+  <Overview>A not so terrible web ui for yt-dlp.&#xD;
+&#xD;
+If you want to limit the concurrent downloads, you need to...&#xD;
+- enable advanced view in the top right corner&#xD;
+- add `--qs [max  downloads]` to "Post Arguments" and set add the number of max download without [] &#xD;
+&#xD;
+If you want to add authentication to the web app, you need to...&#xD;
+- click on "Show more settings ..."&#xD;
+- add a strong password under "Secret Key"&#xD;
+- enable advanced view in the top right corner&#xD;
+- add `--auth --user [your username] --pass [your password]` and replace [your username] and [your password] with your username and password</Overview>
+  <Category>Downloaders: Tools: Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:3033]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/IC3P3/unraid-templates/main/marcopeocchi_yt-dlp-web-ui/img.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1704655679</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Download Path" Target="/downloads" Default="" Mode="rw" Description="Here is where the docker puts downloaded files." Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Web UI Port" Target="3033" Default="3033" Mode="tcp" Description="This is the port you use to access the webui." Type="Port" Display="always" Required="true" Mask="false">3033</Config>
+  <Config Name="Appdata Config" Target="/config" Default="/mnt/user/appdata/yt-dlp-web-ui" Mode="rw" Description="This is where the Docker could stores its config files. It is not needed and you be removed." Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/yt-dlp-web-ui</Config>
+  <Config Name="Secret Key" Target="JWT_SECRET" Default="" Mode="" Description="Here you need to set a secret if you want to add authentication." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+</Container>
